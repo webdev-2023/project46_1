@@ -1,0 +1,78 @@
+Requirement Statement:
+    Task A. A button that links to your GitHub profile when clicked.
+    Task B. A heading that contains the current date and time, formatted for easy readability. Follow this link if you require help.
+    Task C. A bullet-point summary of the advantages of JavaScript frameworks/libraries (like React) above vanilla JavaScript.
+
+=============================== Task A =========================================
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const link = "https://github.com/ncinme";
+
+const element = (
+  <a href={link}>
+    <button>github</button>
+  </a>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<React.StrictMode>{element}</React.StrictMode>);
+
+=============================== Task B =========================================
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const currentTime = () => {
+  let currentDate = new Date(); // instantiating a new date object
+  let time = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+  const element = (
+    <div>
+      <h1>Current Time: {time}</h1>
+    </div>
+  );
+  root.render(<React.StrictMode>{element}</React.StrictMode>);
+};
+
+setInterval(currentTime, 1000);
+
+=============================== Task C =========================================
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const element = (
+  <div>
+    <h3>
+      Advantages of JavaScript frameworks/libraries (like React) above vanilla
+      JavaScript
+    </h3>
+    <ul>
+      <li>We can create web applications more quickly and efficiently</li>
+      <li>
+        Relatively small effort in implementing State-based UI rendering of
+        “live” data. No need to create/load an entirely new UI{" "}
+      </li>
+      <li>
+        Better performance - the virtual DOM is faster and more performant at
+        scale
+      </li>
+      <li>
+        Declarative views make the code more predictable and easier to debug
+      </li>
+      <li>
+        Easily pass rich data through the app and keep state out of the DOM
+      </li>
+      <li>Better documentaion available than vanilla JS</li>
+      <li>Ref: https://reactjs.org/</li>
+    </ul>
+  </div>
+);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<React.StrictMode>{element}</React.StrictMode>);
+
